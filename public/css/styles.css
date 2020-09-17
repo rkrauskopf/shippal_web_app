@@ -23,7 +23,7 @@ body {
       border-radius: 23.5px;;
   }
   .btn:hover {
-      @apply bg-blue-hover;
+      @apply bg-yellow-hover;
   }
   .btn:active {
       @apply outline-none;

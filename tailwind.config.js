@@ -38,6 +38,7 @@ module.exports = {
                 "cerulean-blue": "#294ccb",
                 "yellow-button": "#fcbb32;",
                 "blue-hover": "#0049BE",
+                "yellow-hover": "e2a82d",
                 "green-verified": "#058c42",
                 "blue-text": "#0d3685"
             },
