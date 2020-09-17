@@ -30,7 +30,7 @@ module.exports = {
                 "7xl": "80rem"
             },
             colors: {
-                "blue-background": "#00A8EA",
+                "blue-background": "#F5F7FA",
                 "gray-background": "#eef1f4",
                 "green-button": "#00b89d",
                 "green-hover": "#00a38b",
