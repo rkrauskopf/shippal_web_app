@@ -20,12 +20,15 @@ body {
       background-color: theme("colors.yellow-button");
       @apply font-semibold  text-lg text-blue-text py-2 rounded-sm px-12
       transition duration-200 ease-in-out outline-none;
-      border-radius: 23.5px;;
+      border-radius: 23.5px;
   }
   .btn:hover {
       @apply bg-yellow-hover;
   }
   .btn:active {
+      @apply outline-none;
+  }
+  .btn:focus {
       @apply outline-none;
   }
 
@@ -34,6 +37,12 @@ body {
   }
   .back-btn:hover {
       @apply text-blue-hover;
+  }
+  .back-btn:active {
+      @apply outline-none;
+  }
+  .back-btn:focus {
+      @apply outline-none;
   }
 
   .link {
