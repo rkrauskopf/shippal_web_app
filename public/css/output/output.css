@@ -24563,6 +24563,10 @@ body {
   background: #F5F7FA;
 }
 
+.label-image {
+  height: 300px;
+}
+
 @media (max-width: 639px) {
   .sm\:container {
     width: 100%;
