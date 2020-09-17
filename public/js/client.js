@@ -48,10 +48,19 @@ window.addEventListener("load", () => {
         showError("Invalid Input", "Please enter your email");
         return actions.reject();
       }
-
       else if (!tos.checked) {
         showError("Invalid Input", "Please agree to our terms of service");
         return actions.reject();
+      }
+      else if(email) {
+        // validate email input
+        const re = new RegExp(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/);
+        const isValidEmail = re.test(email);
+        if(!isValidEmail){
+          showError("Invalid Input", "Please enter a valid email address");
+          return actions.reject();
+        }
+
       }
       else {
         return actions.resolve();
