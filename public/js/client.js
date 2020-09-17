@@ -1,15 +1,39 @@
 import { rateEstimate } from "./rate-estimate.js";
-import { setLocalStorage, clearLocalStorage, clearInputs } from "./local-storage.js";
-import { makeStripePayment } from "./payment.js";
+import { setLocalStorage, getLocalStorageItem, clearLocalStorage, clearInputs } from "./local-storage.js";
+import { makePaypalPayment } from "./payment.js";
 import { initializeState, setCurrentStep } from "./initialize-state.js";
 import { verifyAddresses } from "./verify-addresses.js";
 import { checkForFraud } from "./check-for-fraud.js";
 import { debounce, loading, showError, clearError, clearInfo } from "./ui-helpers.js";
+import { getLabel } from "./get-label.js";
 
 window.addEventListener("load", () => {
 
   initializeState();
 
+  paypal.Buttons({createOrder: function (data, actions) {
+    const totalAmount = getLocalStorageItem("totalAmount").toString();
+    // This function sets up the details of the transaction, including the amount and line item details.
+    return actions.order.create({
+      purchase_units: [{
+        amount: {
+          value: totalAmount
+        }
+      }]
+    });
+  },
+  onApprove: function(data, actions) {
+    // This function captures the funds from the transaction.
+    return actions.order.capture().then(async (details) => {
+
+      // TODO: Check that email and ToS have been accepted
+      setLocalStorage("email", document.getElementById("email").value);
+      // This function shows a transaction success message to your buyer.
+      // alert('Transaction completed by ' + details.payer.name.given_name);
+      // await getLabel();
+      window.location.hash = "#step5";
+    });
+  }}).render('#print-label');
 
   document.getElementById("step-1-go-back").addEventListener("click", () => {
     window.location.hash = "#step0"
@@ -132,7 +156,7 @@ window.addEventListener("load", () => {
     }
     else {
       setLocalStorage("email", document.getElementById("email").value);
-      await makeStripePayment();
+      await makePaypalPayment();
     }
   });
 

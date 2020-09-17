@@ -83,14 +83,14 @@ export async function setCurrentStep(isBrowserLoad) {
     case "#step5":
       setStep("step-five");
       loading(true);
-      const madePayment = await verifyStripePayment();
+      // const madePayment = await verifyStripePayment();
       clearError();
       clearInfo();
-      if (!madePayment) {
-        loading(false);
-        showError("Stripe Payment", "Sorry but you don't appear to have made a payment, please contact ShipEngine support");
-        break;
-      }
+      // if (!madePayment) {
+      //   loading(false);
+      //   showError("Stripe Payment", "Sorry but you don't appear to have made a payment, please contact ShipEngine support");
+      //   break;
+      // }
 
       const labelUrls = await getLabel();
 
@@ -98,13 +98,14 @@ export async function setCurrentStep(isBrowserLoad) {
         await sendEmail(labelUrls);
       }
       else if (labelUrls.labelPurchaseError) {
-        const success = await refundStripePayment();
-        if(success) {
-          showInfo("Payment Refund", "Your Stripe Payment has been refunded.");
-        }
-        else {
-          showError("Payment Refund", "There was an issue refunding your payment, please contact ShipEngine support");
-        }
+        showError("Label Purchase Error", "Sorry, there seems to have been an error purchasing your label");
+        // const success = await refundStripePayment();
+        // if(success) {
+        //   showInfo("Payment Refund", "Your Stripe Payment has been refunded.");
+        // }
+        // else {
+        //   showError("Payment Refund", "There was an issue refunding your payment, please contact ShipEngine support");
+        // }
       }
       loading(false);
       break;

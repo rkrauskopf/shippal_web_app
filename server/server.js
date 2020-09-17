@@ -23,13 +23,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'", "https://fonts.gstatic.com", "https://js.stripe.com", "https://mpsnare.iesnare.com", "wss://mpsnare.iesnare.com/"],
-    scriptSrc: ["'self'", "https://mpsnare.iesnare.com",  (req, res) => `'nonce-${res.locals.cspNonce}'`],
-    styleSrc: ["'self'", "https://fonts.googleapis.com"]
-  }
-}));
+// app.use(helmet.contentSecurityPolicy({
+//   directives: {
+//     defaultSrc: ["'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com", "https://js.stripe.com", "https://mpsnare.iesnare.com", "wss://mpsnare.iesnare.com/"],
+//     scriptSrc: ["'self'", "https://www.paypal.com", "https://mpsnare.iesnare.com",  (req, res) => `'nonce-${res.locals.cspNonce}'`],
+//     styleSrc: ["'self'" ]
+//   }
+// }));
 
 /* ATTN: If this project ever gets hosted on any services that do not set the x-forwarded-proto header
 DO NOT use the Options object that is being passed to enforce.HTTPS(); as it is easy to spoof

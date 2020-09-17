@@ -4,8 +4,8 @@ const config = require("./config");
 const fetch = require("node-fetch");
 const express = require("express");
 const router = express.Router();
-const stripe = require("stripe")(config.stripe.secretKey);
-stripe.setApiVersion(config.stripe.apiVersion);
+// const stripe = require("stripe")(config.stripe.secretKey);
+// stripe.setApiVersion(config.stripe.apiVersion);
 
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(config.sendgrid.apiKey);
@@ -14,7 +14,7 @@ require("dotenv").config();
 
 // Render the main app HTML.
 router.get("/", (req, res) => {
-  res.render("index.ejs", { nonce: res.locals.cspNonce });
+  res.render("index.ejs", { nonce: res.locals.cspNonce, paypalClientID: config.paypal.clientID });
 });
 
 // ShipEngine API Address Validation
@@ -293,7 +293,7 @@ router.post("/refund-stripe-payment", async (req, res) => {
 // Return the stripe publishable key config based on environments
 router.get("/config", (req, res) => {
   res.json({
-    stripePublishableKey: config.stripe.publishableKey
+    paypalClientID: config.stripe.paypal.clientID
   });
 });
 

@@ -1,4 +1,4 @@
-import { getLocalStorageItem } from "./local-storage.js";
+import { getLocalStorageItem, setLocalStorage } from "./local-storage.js";
 import { showError, loading, clearError } from "./ui-helpers.js";
 
 export async function rateEstimate() {
@@ -74,6 +74,8 @@ export async function rateEstimate() {
 
       const label = document.createElement("label");
       const totalAmount = rate.shipping_amount.amount + rate.insurance_amount.amount + rate.confirmation_amount.amount + rate.other_amount.amount;
+      
+      setLocalStorage("totalAmount", totalAmount);
       label.setAttribute("for", rate.rate_id);
       label.textContent = `$${totalAmount.toFixed(2)} - ${rate.service_type} / ${rate.delivery_days} day(s)`;
       label.className = "py-2";
