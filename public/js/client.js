@@ -71,9 +71,9 @@ window.addEventListener("load", () => {
     window.location.hash = "#step2"
   });
 
-  document.getElementById("step-4-go-back").addEventListener("click", () => {
-    window.location.hash = "#step3"
-  });
+  // document.getElementById("step-4-go-back").addEventListener("click", () => {
+  //   window.location.hash = "#step3"
+  // });
 
   // Landing Page
   document.getElementById("step0NextButton").addEventListener("click", () => {
