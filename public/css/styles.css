@@ -17,8 +17,8 @@ body {
       @apply container mx-auto mt-10 w-4/5 max-w-7xl font-primary;
   }  
   .btn {
-      background-color: theme("colors.blue-button");
-      @apply font-semibold  text-lg text-white py-2 rounded-sm px-12
+      background-color: theme("colors.yellow-button");
+      @apply font-semibold  text-lg text-blue-text py-2 rounded-sm px-12
       transition duration-200 ease-in-out outline-none;
       border-radius: 23.5px;;
   }
@@ -30,7 +30,7 @@ body {
   }
 
   .back-btn {
-      @apply font-semibold text-blue-button text-lg mx-5 transition duration-200 ease-in-out;
+      @apply font-semibold text-blue-text text-lg mx-5 transition duration-200 ease-in-out;
   }
   .back-btn:hover {
       @apply text-blue-hover;
