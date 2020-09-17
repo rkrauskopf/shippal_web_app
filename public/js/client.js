@@ -14,13 +14,29 @@ window.addEventListener("load", () => {
   paypal.Buttons({
     createOrder: function (data, actions) {
       const totalAmount = getLocalStorageItem("totalAmount").toString();
+      // const toAddress = getLocalStorageItem("toAddress");
       // This function sets up the details of the transaction, including the amount and line item details.
       return actions.order.create({
         purchase_units: [{
           amount: {
             value: totalAmount
           }
-        }]
+        }],
+        application_context: {
+          shipping_preference: "NO_SHIPPING"
+        }
+        // payer: {
+        //   address: {
+        //     address_line1: toAddress.address_line1,
+        //     address_line2: toAddress.address_line2,
+        //     address_line3: toAddress.address_line3,
+
+        //     admin_area_2: toAddress.city_locality,
+        //     admin_area_1: toAddress.state_province,
+        //     postal_code: toAddress.postal_code,
+        //     country_code: "US"
+        //   }
+        // }
       });
     },
     onClick: function (data, actions) {
@@ -40,8 +56,6 @@ window.addEventListener("load", () => {
       else {
         return actions.resolve();
       }
-
-
     },
     onApprove: function (data, actions) {
       clearError();
