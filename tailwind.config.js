@@ -30,15 +30,18 @@ module.exports = {
                 "7xl": "80rem"
             },
             colors: {
-                "blue-background": "#baeff3",
+                "blue-background": "#F5F7FA",
                 "gray-background": "#eef1f4",
                 "green-button": "#00b89d",
                 "green-hover": "#00a38b",
                 "blue-container": "#effafd",
                 "cerulean-blue": "#294ccb",
-                "blue-button": "#005ff7",
+                "yellow-button": "#fcbb32;",
                 "blue-hover": "#0049BE",
-                "green-verified": "#058c42"
+                "yellow-hover": "#e2a82d",
+                "green-verified": "#058c42",
+                "blue-text": "#0d3685",
+                "blue-form": "#0070ba"
             },
             fontFamily: {
                 primary: ["Open Sans", "sans-serif"]

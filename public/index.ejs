@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <title>ShipPenguin by ShipEngine</title>
+  <title>ShipPal by PayPal</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/output/output.css">
-  <link rel="icon" type="image/png" sizes="104x80" href="/images/shipenguin-icon.svg">
+  <link rel="icon" type="image/png" sizes="104x80" href="/images/pp_logo.png">
 
   <link rel="preload" href="/js/initialize-state.js" as="script" crossorigin>
   <link rel="preload" href="/js/verify-addresses.js" as="script" crossorigin>
@@ -21,11 +21,8 @@
 
 <body>
   <div>
-  <header class="mb-12 mt-8">
-    <a href="#"><img class="max-w-xs mx-auto mt-4" src="/images/shipenguin-logo_v5.svg" alt="ShipPenguin logo"></a>
-    <!-- <a class="absolute top-0 right-0" href="https://github.com/ShipEngine/shipenguin_web_app" target="_blank">
-      <img class="h-14" src="/images/github-corner.svg" alt="Github Logo"/>
-    </a> -->
+  <header class="flex justify-center mb-12 mt-4">
+    <a href="#"><img class="w-48 mt-4" src="/images/paypal_logo.png" alt="PayPal logo"></a>
   </header>
 
   <!-- Error Card -->
@@ -49,7 +46,7 @@
   <!-- Landing Page -->
   <section class="section-container pb-12 step-zero hidden">
 
-    <h1 class="text-black text-5xl sm:text-3xl font-bold text-center mb-10 w-3/4 m-auto sm:w-full">ShipPenguin is the easiest way to get discounted shipping labels.</h1>
+    <h1 class="text-black text-5xl sm:text-3xl font-bold text-center mb-10 w-3/4 m-auto sm:w-full">PayPal is the easiest way to get discounted shipping labels.</h1>
     <div class=" p-0 mb-20">
       <div class="text-center sm:px-0 px-24 space-y-20 pt-4 pb-3">
         <h2 class="text-xl sm:text-l w-3/4 m-auto sm:w-full">Discounted rates on all of the most common USPS services. It's everything you need to get your packages from point A to beyond.</h2>
@@ -70,30 +67,30 @@
             <div class="flex md:items-center">
               <div class="w-3/4">
                 <label class="input-label" for="from-name">Name</label>
-                <input class="input" id="from-name" type="text" placeholder="" required>
+                <input class="input focus:outline-none focus:border-blue-form" id="from-name" type="text" placeholder="" required>
               </div>
             </div>
             <div class="flex md:items-center">
               <div class="w-full">
                 <label class="input-label" for="from-address1">Address 1</label>
 
-                <input class="input" id="from-address1" type="address" placeholder="">
+                <input class="input focus:outline-none focus:border-blue-form" id="from-address1" type="address" placeholder="">
 
                 <label class="input-label" for="from-address2">Address 2</label>
-                <input class="input" id="from-address2" type="address" placeholder="">
+                <input class="input focus:outline-none focus:border-blue-form" id="from-address2" type="address" placeholder="">
 
                 <div class="grid grid-cols-address md:grid-cols-address-sm gap-6 md:gap-2">
                   <div>
                     <label class="input-label" for="from-city">City</label>
-                    <input class="input" id="from-city" type="text" placeholder="">
+                    <input class="input focus:outline-none focus:border-blue-form" id="from-city" type="text" placeholder="">
                   </div>
                   <div>
                     <label class="input-label" for="from-state">State</label>
-                    <input class="input" id="from-state" type="text" placeholder="">
+                    <input class="input focus:outline-none focus:border-blue-form" id="from-state" type="text" placeholder="">
                   </div>
                   <div>
                     <label class="input-label" for="from-zip">ZIP</label>
-                    <input class="input" id="from-zip" type="text" placeholder="">
+                    <input class="input focus:outline-none focus:border-blue-form" id="from-zip" type="text" placeholder="">
                   </div>
                 </div>
               </div>
@@ -113,30 +110,30 @@
             <div class="flex md:items-center">
               <div class="w-3/4">
                 <label class="input-label" for="to-name">Name</label>
-                <input class="input" id="to-name" type="text" placeholder="" required>
+                <input class="input focus:outline-none focus:border-blue-form" id="to-name" type="text" placeholder="" required>
               </div>
             </div>
             <div class="flex md:items-center">
               <div class="w-full">
                 <label class="input-label" for="to-address1">Address 1</label>
 
-                  <input class="input" id="to-address1" type="address" placeholder="">
+                  <input class="input focus:outline-none focus:border-blue-form" id="to-address1" type="address" placeholder="">
 
                   <label class="input-label" for="to-address2">Address 2</label>
-                  <input class="input" id="to-address2" type="address" placeholder="">
+                  <input class="input focus:outline-none focus:border-blue-form" id="to-address2" type="address" placeholder="">
 
                   <div class="grid grid-cols-address md:grid-cols-address-sm gap-6 md:gap-2">
                     <div>
                       <label class="input-label" for="to-city">City</label>
-                      <input class="input" id="to-city" type="text" placeholder="">
+                      <input class="input focus:outline-none focus:border-blue-form" id="to-city" type="text" placeholder="">
                     </div>
                     <div>
                       <label class="input-label" for="to-state">State</label>
-                      <input class="input" id="to-state" type="text" placeholder="">
+                      <input class="input focus:outline-none focus:border-blue-form" id="to-state" type="text" placeholder="">
                     </div>
                     <div>
                       <label class="input-label" for="to-zip">ZIP</label>
-                      <input class="input" id="to-zip" type="text" placeholder="">
+                      <input class="input focus:outline-none focus:border-blue-form" id="to-zip" type="text" placeholder="">
                     </div>
                   </div>
                 
@@ -212,11 +209,11 @@
               <div class="flex">
                 <div class="w-1/4 pr-2 items-center">
                   <label for="weight-lbs" class="text-xs text-gray-500">Lbs</label>
-                  <input id="weight-lbs" class="input mr-2" type="number" min="0"/>
+                  <input id="weight-lbs" class="input mr-2 focus:outline-none focus:border-blue-form" type="number" min="0"/>
                 </div>
                 <div class="w-1/4  items-center">
                   <label for="weight-ounces" class="text-xs text-gray-500">Oz</label>
-                  <input id="weight-ounces" class="input mr-2" type="number" min="0"/>
+                  <input id="weight-ounces" class="input mr-2 focus:outline-none focus:border-blue-form" type="number" min="0"/>
                 </div>
 
               </div>
@@ -231,17 +228,17 @@
               <div class="flex items-center">
                 <div class="w-1/3 pr-2 sm:w-1/4">
                   <label for="length" class="text-xs text-gray-500">Length</label>
-                  <input id="length" class="input mr-2" type="number" placeholder="" min="1" />
+                  <input id="length" class="input mr-2 focus:outline-none focus:border-blue-form" type="number" placeholder="" min="1" />
                   
                 </div>
                 <div class="w-1/3 pr-2 sm:w-1/4 ">
                   <label for="width" class="text-xs text-gray-500">Width</label>
-                  <input id="width" class="input mr-2" type="number" placeholder="" min="1"/>
+                  <input id="width" class="input mr-2 focus:outline-none focus:border-blue-form" type="number" placeholder="" min="1"/>
                   
                 </div>
                 <div class="w-1/3  items-center sm:w-1/4">
                   <label for="height" class="text-xs text-gray-500">Height</label>
-                  <input id="height" class="input mr-2" type="number" placeholder="" min="1">
+                  <input id="height" class="input mr-2 focus:outline-none focus:border-blue-form" type="number" placeholder="" min="1">
                   
                 </div>
                 <p class="pl-2 text-gray-500 text-xs mt-4">inches</p>
@@ -402,7 +399,7 @@
                 <div class="py-8">
                   <input id="iovation-input" name="iovation-input" type="hidden" required />
                   <label class="block input-label" for="email">Email address</label>
-                  <input class="input" id="email" type="text" placeholder="" required>
+                  <input class="input focus:outline-none focus:border-blue-form" id="email" type="text" placeholder="" required>
                 </div>
               </div>
                 <div class="terms-container flex text-sm items-center -mb-2">
@@ -428,7 +425,7 @@
   <section class="section-container md:w-full step-five hidden">
     <div class=" text-center sm:px-0 px-24 space-y-20 pb-5 mb-20 ">
       <h2 class="text-5xl sm:text-2xl sm:px-4 font-bold w-3/4 m-auto">Label emailed! Thanks for your purchase.</h2>
-      <p class="text-xl text-black w-3/4 m-auto">ShipPenguin offers discounted rates on all of the most common USPS services. It's everything you need to get your packages from point A to beyond.</p>
+      <p class="text-xl text-black w-3/4 m-auto">ShipPal for PayPal offers discounted rates on all of the most common USPS services. It's everything you need to get your packages from point A to beyond.</p>
       <button id="create-another-label" class="btn w-1/3 navigate-step">
         <img class="hidden animate-spin h-5 w-5 mx-auto my-0" src="/images/loading.svg" alt="Loading icon">
 
@@ -439,9 +436,9 @@
 </div>
 
 <footer class="flex justify-between items-center m-4 text-sm md:flex-col md:text-center">
-  <p class="leading-4 ml-5 text-gray-700 md:ml-0">ShipPenguin is powered by <a target="_blank" class="footer-link" href="https://www.shipengine.com/?ref=shippenguin">ShipEngine</a>, the world's leading shipping API.</p>
+  <p class="leading-4 ml-5 text-gray-700 md:ml-0">ShipPal for PayPal is powered by <a target="_blank" class="footer-link" href="https://www.shipengine.com/?ref=shippenguin">ShipEngine</a>, the world's leading shipping API.</p>
   <div class="footer-container font-bold">
-    <a class="footer-link mx-3" target="_blank" href="https://www.shipengine.com/privacy-policy/">Privacy Policy</a>
+    <a class="footer-link mx-3" target="_blank" href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full">Privacy Policy</a>
     <a class="footer-link mx-3" target="_blank" href="https://www.shipengine.com/terms-of-service/">Terms Of Service</a>
     <a class="footer-link mx-3" target="_blank" href="https://www.shipengine.com/ccpa/">Do Not Sell My Information</a>
   </div>
