@@ -165,7 +165,7 @@ router.post("/email", async (req, res) => {
     <br/><br/>
     And, remember: ShipPal is always here for you when you want to skip the line at the Post Office. Happy shipping!
     <br/><br/>
-    The ShipPenguin Team`,
+    The ShipPal Team`,
       attachments: [
         {
           content: parsedPdfResponse.toString("base64"),
