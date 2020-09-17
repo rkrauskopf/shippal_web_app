@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     background-size: cover;
-    background: radial-gradient(#fff, theme("colors.blue-background"));
+    background: theme("colors.blue-background");
 }
 
 @layer components {
