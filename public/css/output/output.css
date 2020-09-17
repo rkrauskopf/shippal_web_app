@@ -656,11 +656,11 @@ video {
   color: rgba(0, 73, 190, var(--text-opacity));
 }
 
-.btn:active {
+.back-btn:active {
   outline: 0;
 }
 
-.btn:focus {
+.back-btn:focus {
   outline: 0;
 }
 
