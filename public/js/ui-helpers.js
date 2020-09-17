@@ -134,8 +134,8 @@ export function populateCheckoutPage() {
   // payment amount
   const shippingCost = getLocalStorageItem("shippingCost");
 
-  const paymentButton = document.querySelector("#print-label .button-content");
-  paymentButton.textContent = `Pay ${shippingCost}`;
+  const paymentButton = document.querySelector("#checkout-total-amount-summary");
+  paymentButton.textContent = `${shippingCost}`;
 
   // dimensions
   const dimensions = getLocalStorageItem("dimensions");

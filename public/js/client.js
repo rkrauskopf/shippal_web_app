@@ -11,29 +11,53 @@ window.addEventListener("load", () => {
 
   initializeState();
 
-  paypal.Buttons({createOrder: function (data, actions) {
-    const totalAmount = getLocalStorageItem("totalAmount").toString();
-    // This function sets up the details of the transaction, including the amount and line item details.
-    return actions.order.create({
-      purchase_units: [{
-        amount: {
-          value: totalAmount
-        }
-      }]
-    });
-  },
-  onApprove: function(data, actions) {
-    // This function captures the funds from the transaction.
-    return actions.order.capture().then(async (details) => {
+  paypal.Buttons({
+    createOrder: function (data, actions) {
+      const totalAmount = getLocalStorageItem("totalAmount").toString();
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: totalAmount
+          }
+        }]
+      });
+    },
+    onClick: function (data, actions) {
+      const email = document.getElementById("email").value;
+      const tos = document.getElementById("terms-and-conditions");
 
-      // TODO: Check that email and ToS have been accepted
+      clearError();
+      if (!email) {
+        showError("Invalid Input", "Please enter your email");
+        return actions.reject();
+      }
+
+      else if (!tos.checked) {
+        showError("Invalid Input", "Please agree to our terms of service");
+        return actions.reject();
+      }
+      else {
+        return actions.resolve();
+      }
+
+
+    },
+    onApprove: function (data, actions) {
+      clearError();
       setLocalStorage("email", document.getElementById("email").value);
-      // This function shows a transaction success message to your buyer.
-      // alert('Transaction completed by ' + details.payer.name.given_name);
-      // await getLabel();
       window.location.hash = "#step5";
-    });
-  }}).render('#print-label');
+
+      // This function captures the funds from the transaction.
+      return actions.order.capture().then(async (details) => {
+
+        // TODO: Check that email and ToS have been accepted
+        // This function shows a transaction success message to your buyer.
+        // alert('Transaction completed by ' + details.payer.name.given_name);
+        // await getLabel();
+      });
+    }
+  }).render('#print-label');
 
   document.getElementById("step-1-go-back").addEventListener("click", () => {
     window.location.hash = "#step0"
