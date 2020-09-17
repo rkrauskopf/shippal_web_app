@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <path d="M6.98322765,11.630391 L4.11965637,8.74711701 C3.96011454,8.58848209 3.96011454,8.33027845 4.11965637,8.17079974 L4.69809777,7.59363866 C4.85845776,7.43584755 5.11699734,7.43584755 5.27653917,7.59363866 L7.27285744,9.61285862 L11.7228472,5.11960904 C11.8832072,4.96013032 12.1417468,4.96013032 12.3012886,5.11960904 L12.87973,5.69592631 C13.04009,5.85540503 13.04009,6.11360866 12.87973,6.27224358 L7.56166905,11.630391 C7.40212722,11.7898697 7.14358765,11.7898697 6.98322765,11.630391" id="path-1"></path>
+    </defs>
+    <g id="Work-space" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Service" transform="translate(-199.000000, -293.000000)">
+            <g id="v3-/-icons-/-check-mark-/-default" transform="translate(199.000000, 287.000000)">
+                <g id="Group" transform="translate(0.000000, 6.000000)">
+                    <circle id="Oval" fill="#16DB65" cx="8.5" cy="8.5" r="8.5"></circle>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
