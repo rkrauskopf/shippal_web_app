@@ -70,7 +70,7 @@ export async function rateEstimate() {
       radioInput.value = rate.rate_id;
       radioInput.type = "radio";
       radioInput.setAttribute("name", "rates");
-      radioInput.className = "mx-3 w-4 h-4 align-text-top";
+      radioInput.className = "mt-px mx-3 w-4 h-5 align-text-top";
 
       const label = document.createElement("label");
       const totalAmount = rate.shipping_amount.amount + rate.insurance_amount.amount + rate.confirmation_amount.amount + rate.other_amount.amount;
