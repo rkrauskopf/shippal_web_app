@@ -39,7 +39,8 @@ module.exports = {
                 "yellow-button": "#fcbb32;",
                 "blue-hover": "#0049BE",
                 "green-verified": "#058c42",
-                "blue-text": "#0d3685"
+                "blue-text": "#0d3685",
+                "blue-form": "#0070ba"
             },
             fontFamily: {
                 primary: ["Open Sans", "sans-serif"]
