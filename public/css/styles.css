@@ -12,6 +12,10 @@ body {
     background: theme("colors.blue-background");
 }
 
+.label-image {
+    height: 300px;
+}
+
 @layer components {
   .section-container {
       @apply container mx-auto mt-10 w-4/5 max-w-7xl font-primary;
